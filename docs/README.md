@@ -40,7 +40,7 @@
   - Station이 2개 이상
 - [ ] Line에 Station을 추가하는 기능 # addStation()
 - [ ] Line에 Station을 제거하는 기능 # deleteStation()
-- [ ] Station 조회 기능 # getStations()
+- [x] Stations 조회 기능 # getStations()
 
 ### Station
 - [x] 생성시에 지하철 역 이름 형식이 맞는지 확인

@@ -29,4 +29,16 @@ public class Line {
     public String getName() {
         return name;
     }
+
+    public List<Station> getStations() {
+        return stations;
+    }
+
+    public void addStation() {
+
+    }
+
+    public void deleteStation() {
+
+    }
 }
