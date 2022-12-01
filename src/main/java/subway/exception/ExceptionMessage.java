@@ -7,6 +7,7 @@ public enum ExceptionMessage {
 
     STATION_IN_LINE("해당 노선에 이미 있는 역입니다."),
     STATION_OUT_LINE("해당 노선에 없는 역입니다."),
+    STATION_IN_REPOSITORY("해당 역은 이미 있는 역입니다."),
     ;
 
     ExceptionMessage(String message) {

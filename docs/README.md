@@ -60,9 +60,11 @@
   - 같은 이름의 Line이 없을 경우, 예외를 발생시킴
 
 ### StationRepository
-- [ ] 지하철 역 등록 # addStation()
-- [ ] 지하철 역 삭제 # deleteStation()
-- [ ] 지하철 역 목록 조회 # getStations()
+- [x] 지하철 역 등록 # addStation()
+  - 같은 이름이 있을 경우, 예외를 발생 시킴
+- [x] 지하철 역 삭제 # deleteStation()
+  - 같은 이름이 없을 경우, 예외를 발생 시킴
+- [] 지하철 역 목록 조회 # stations()
 
 ### SubwayMap
 - [ ] 생성 시에 초기 역 설정함
