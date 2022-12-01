@@ -3,6 +3,7 @@ package subway.domin;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -55,5 +56,24 @@ public class LineTest {
                             "[ERROR] 노선에는 적어도 2개 이상의 역이 존재해야 합니다.")
                     );
         }
+    }
+
+    @Test
+    void addStationNormalTest() {
+        Line line = new Line("1호선", List.of(new Station("11역"), new Station("22역")));
+
+        line.addStation(1, new Station("33역"));
+
+        assertThat(line.getStations().get(1).getName()).isEqualTo("33역");
+    }
+
+    @Test
+    void addStationAbnormalTest() {
+        Line line = new Line("1호선", List.of(new Station("11역"), new Station("22역")));
+        String exceptionMessage = "[ERROR] 해당 노선에 이미 있는 역입니다.";
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            line.addStation(1, new Station("11역"));});
+        assertThat(exception.getMessage()).isEqualTo(exceptionMessage);
     }
 }

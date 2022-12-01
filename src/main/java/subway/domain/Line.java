@@ -6,13 +6,13 @@ import java.util.List;
 
 public class Line {
     private String name;
-    private List<Station> stations;
+    private List<Station> stations = new ArrayList<>();
 
     public Line(String name, List<Station> stations) {
         validateName(name);
         validateStations(stations);
         this.name = name;
-        this.stations = stations;
+        this.stations.addAll(stations);
     }
 
     private void validateName(String name) {
@@ -38,11 +38,23 @@ public class Line {
         return copyStations;
     }
 
-    public void addStation() {
-
+    public void addStation(int index, Station station) {
+        if (isStationInLine(station)) {
+            throw new IllegalArgumentException(ExceptionMessage.STATION_IN_LINE.getMessage());
+        }
+        stations.add(index, station);
     }
 
     public void deleteStation() {
 
+    }
+
+    private boolean isStationInLine(Station station) {
+        for (Station stationInLine : stations) {
+            if (stationInLine.getName().equals(station.getName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -38,7 +38,8 @@
 - [x] 생성시에 노선 이름 형식이 맞는지 확인, Station이 2개 이상 있는지 확인
   - 노선 이름 형식 : 3글자 이상이며 "선"으로 끝나야 한다.
   - Station이 2개 이상
-- [ ] Line에 Station을 추가하는 기능 # addStation()
+- [x] Line에 Station을 추가하는 기능 # addStation()
+  - Line에 같은 이름이 있는 Station이 있는 경우 에러 발생
 - [ ] Line에 Station을 제거하는 기능 # deleteStation()
 - [x] Stations 조회 기능 # getStations()
 
