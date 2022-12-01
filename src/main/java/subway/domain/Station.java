@@ -3,7 +3,7 @@ package subway.domain;
 import subway.exception.ExceptionMessage;
 
 public class Station {
-    private String name;
+    private final String name;
 
     public Station(String name) {
         validateName(name);
