@@ -3,6 +3,7 @@ package subway.domain;
 import subway.exception.ExceptionMessage;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Line {
     private String name;
@@ -45,8 +46,16 @@ public class Line {
         stations.add(index, station);
     }
 
-    public void deleteStation() {
+    public void deleteStation(Station station) {
+        if (!isStationInLine(station)) {
+            throw new IllegalArgumentException(ExceptionMessage.STATION_OUT_LINE.getMessage());
+        }
+        if (stations.size() <= 2 ) {
+            throw new IllegalArgumentException(ExceptionMessage.LINE_STATIONS_SIZE.getMessage());
+        }
 
+        stations.removeIf(stationInLine ->
+                Objects.equals(stationInLine.getName(), station.getName()));
     }
 
     private boolean isStationInLine(Station station) {

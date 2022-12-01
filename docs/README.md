@@ -40,7 +40,9 @@
   - Station이 2개 이상
 - [x] Line에 Station을 추가하는 기능 # addStation()
   - Line에 같은 이름이 있는 Station이 있는 경우 에러 발생
-- [ ] Line에 Station을 제거하는 기능 # deleteStation()
+- [x] Line에 Station을 제거하는 기능 # deleteStation()
+  - 제거하려는 Station이 Line에 없는 경우 에러 발생
+  - 현재 역이 2개 이하인 경우 에러 발생
 - [x] Stations 조회 기능 # getStations()
 
 ### Station

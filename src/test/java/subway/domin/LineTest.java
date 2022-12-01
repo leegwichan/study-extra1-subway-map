@@ -76,4 +76,36 @@ public class LineTest {
             line.addStation(1, new Station("11역"));});
         assertThat(exception.getMessage()).isEqualTo(exceptionMessage);
     }
+
+    @Test
+    void deleteStationNormalTest() {
+        Line line = new Line("1호선", List.of(new Station("11역"), new Station("22역"),
+                new Station("33역")));
+
+        line.deleteStation(new Station("11역"));
+
+        assertThat(line.getStations().get(0).getName()).isEqualTo("22역");
+        assertThat(line.getStations().get(1).getName()).isEqualTo("33역");
+    }
+
+    @Test
+    void deleteStationAbnormalTest_whenNotExist() {
+        Line line = new Line("1호선", List.of(new Station("11역"), new Station("22역"),
+                new Station("33역")));
+        String exceptionMessage = "[ERROR] 해당 노선에 없는 역입니다.";
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            line.deleteStation(new Station("44역"));});
+        assertThat(exception.getMessage()).isEqualTo(exceptionMessage);
+    }
+
+    @Test
+    void deleteStationAbnormalTest_whenSizeIs2() {
+        Line line = new Line("1호선", List.of(new Station("11역"), new Station("22역")));
+        String exceptionMessage = "[ERROR] 노선에는 적어도 2개 이상의 역이 존재해야 합니다.";
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            line.deleteStation(new Station("11역"));});
+        assertThat(exception.getMessage()).isEqualTo(exceptionMessage);
+    }
 }
