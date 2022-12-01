@@ -15,19 +15,22 @@ public class StationRepository {
     }
 
     public static void addStation(Station station) {
-        if (isInStationRepository(station)) {
+        if (isInStationRepository(station.getName())) {
             throw new IllegalArgumentException(ExceptionMessage.STATION_IN_REPOSITORY.getMessage());
         }
         stations.add(station);
     }
 
     public static boolean deleteStation(String name) {
+        if (isInStationRepository(name)) {
+            throw new IllegalArgumentException(ExceptionMessage.STATION_OUT_REPOSITORY.getMessage());
+        }
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
     }
 
-    private static boolean isInStationRepository(Station station) {
+    private static boolean isInStationRepository(String name) {
         for (Station stationInRepository :  stations) {
-            if (stationInRepository.getName().equals(station.getName())) {
+            if (stationInRepository.getName().equals(name)) {
                 return true;
             }
         }
