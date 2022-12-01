@@ -1,6 +1,7 @@
 package subway.domain;
 
 import subway.exception.ExceptionMessage;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Line {
@@ -31,7 +32,10 @@ public class Line {
     }
 
     public List<Station> getStations() {
-        return stations;
+        List<Station> copyStations = new ArrayList<>();
+        copyStations.addAll(stations);
+
+        return copyStations;
     }
 
     public void addStation() {
