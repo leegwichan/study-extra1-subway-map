@@ -28,6 +28,15 @@ public class StationRepository {
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
     }
 
+    public static Station getStation(String name) {
+        for (Station station : stations) {
+            if (station.getName().equals(name)) {
+                return station;
+            }
+        }
+        throw new IllegalArgumentException(ExceptionMessage.STATION_OUT_REPOSITORY.getMessage());
+    }
+
     private static boolean isInStationRepository(String name) {
         for (Station stationInRepository :  stations) {
             if (stationInRepository.getName().equals(name)) {
