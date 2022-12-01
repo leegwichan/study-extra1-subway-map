@@ -35,13 +35,16 @@
 ## Class 별 설정
 
 ### Line
-- [ ] 생성시에 노선 이름이 2글자 넘어가는지 확인, Station이 2개 이상 있는지 확인
+- [x] 생성시에 노선 이름 형식이 맞는지 확인, Station이 2개 이상 있는지 확인
+  - 노선 이름 형식 : 3글자 이상이며 "선"으로 끝나야 한다.
+  - Station이 2개 이상
 - [ ] Line에 Station을 추가하는 기능 # addStation()
 - [ ] Line에 Station을 제거하는 기능 # deleteStation()
 - [ ] Station 조회 기능 # getStations()
 
 ### Station
-- [ ] 생성시에 지하철 역 이름이 2글자 넘어가는지 확인
+- [x] 생성시에 지하철 역 이름 형식이 맞는지 확인
+  - 역 이름 형식 : 3글자 이상이며 "역"으로 끝나야 한다.
 
 ### LineRepository
 - [ ] 노선 등록 # addLine()
