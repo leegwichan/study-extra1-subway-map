@@ -11,6 +11,8 @@ public enum ExceptionMessage {
     STATION_OUT_REPOSITORY("해당 역은 없는 역입니다."),
     LINE_IN_REPOSITORY("해당 노선은 이미 있는 노선 이름입니다."),
     LINE_OUT_REPOSITORY("해당 노선은 없는 노선 이름입니다."),
+
+    NOT_STATION_DELETE("이미 노선에 등록된 역은 삭제할 수 없습니다."),
     ;
 
     ExceptionMessage(String message) {

@@ -77,13 +77,14 @@
 
 ### SubwayMap
 - [x] 생성 시에 초기 역 설정함
-- [ ] 역 등록
-- [ ] 역 삭제
-- [ ] 역 조회
-- [ ] 노선 등록
+- [x] 역 등록 # enrollStation
+- [x] 역 삭제 # deleteStation
+  - 이미 등록된 역을 삭제할 경우 에러 발생
+- [x] 전체 역 조회 # getStations
+- [x] 노선 등록 # enrollLine
   - 노선 등록시에 사용되는 역은 이미 역 등록이 되어있어야 한다.
-- [ ] 노선 삭제
-- [ ] 노선 조회
-- [ ] 구간 등록
-- [ ] 구간 삭제
-- [ ] 지하철 노선도 출력
+- [x] 노선 삭제 # deleteLine
+- [x] 노선 조회 # getLine
+- [x] 구간 등록 # enrollSection
+- [x] 구간 삭제 # deleteSection
+- [x] 전체 노선 조회 # getLines
