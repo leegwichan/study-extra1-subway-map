@@ -44,4 +44,23 @@ public class LineRepositoryTest {
                 repository.addLine(LINE1));
 
     }
+
+    @Test
+    void deleteLineTest() {
+        LineRepository repository = initialLineRepository();
+
+        repository.deleteLine(LINE_NAME1);
+
+        assertThat(repository.lines().size()).isEqualTo(1);
+    }
+
+    @Test
+    void deleteLineTest_Exception() {
+        LineRepository repository = initialLineRepository();
+
+        assertThrows(IllegalArgumentException.class, () ->
+                repository.deleteLine(ANOTHER_LINE_NAME));
+    }
+
+    
 }
