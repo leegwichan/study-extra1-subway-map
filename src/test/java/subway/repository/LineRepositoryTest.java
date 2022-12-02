@@ -72,6 +72,23 @@ public class LineRepositoryTest {
         assertThat(repository.isInRepository(lineName)).isEqualTo(expected);
     }
 
+    @Test
+    void getLineTest() {
+        LineRepository repository = initialLineRepository();
+
+        Line result = repository.getLine(LINE_NAME1);
+
+        assertThat(result.getName()).isEqualTo(LINE_NAME1);
+        assertThat(result.getStations().get(0).getName()).isEqualTo("11역");
+    }
+
+    @Test
+    void getLineTest_Exception() {
+        LineRepository repository = initialLineRepository();
+
+        assertThrows(IllegalArgumentException.class, () ->
+                repository.getLine(ANOTHER_LINE_NAME));
+    }
 
 
 }
