@@ -58,12 +58,16 @@ public class Line {
                 Objects.equals(stationInLine.getName(), station.getName()));
     }
 
-    private boolean isStationInLine(Station station) {
+    public boolean isStationInLine(Station station) {
         for (Station stationInLine : stations) {
             if (stationInLine.getName().equals(station.getName())) {
                 return true;
             }
         }
         return false;
+    }
+
+    public Line copy() {
+        return new Line(name, stations);
     }
 }

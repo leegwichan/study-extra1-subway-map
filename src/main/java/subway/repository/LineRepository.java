@@ -1,6 +1,7 @@
 package subway.repository;
 
 import subway.domain.Line;
+import subway.domain.Station;
 import subway.exception.ExceptionMessage;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,5 +36,37 @@ public class LineRepository {
             }
         }
         return false;
+    }
+
+    public static Line getLine(String name) {
+        for (Line lineInRepository : lines) {
+            if (lineInRepository.getName().equals(name)) {
+                return lineInRepository.copy();
+            }
+        }
+
+        throw new IllegalArgumentException(ExceptionMessage.LINE_OUT_REPOSITORY.getMessage());
+    }
+
+    public static boolean isEnrollStation(Station station) {
+        for (Line lineInRepository : lines) {
+            if (lineInRepository.isStationInLine(station)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void updateLine(Line line) {
+        boolean isUpdate = false;
+        for (int index = 0; index < lines.size(); index++) {
+            if (lines.get(index).getName().equals(line.getName())) {
+                lines.set(index, line);
+                isUpdate = true;
+            }
+        }
+        if (!isUpdate) {
+            throw new IllegalArgumentException(ExceptionMessage.LINE_OUT_REPOSITORY.getMessage());
+        }
     }
 }

@@ -56,12 +56,12 @@
   - 같은 이름의 Line이 없을 경우, 예외를 발생시킴
 - [x] 노선 가져오기 # lines()
   - 모든 노선의 정보 가져오기
-- [ ] 노선 가져오기
+- [x] 노선 가져오기 # getLine()
   - 입력한 String과 일치하는 노선 가져오기
   - 같은 이름의 Line이 없을 경우, 예외를 발생시킴
-- [ ] 역 찾기 # findStation()
-  - 현재 노선에 등록되어 있는 역인지 찾기
-- [ ] 노선 업데이트 # updateLine()
+- [x] 역 찾기 # isEnrollStation()
+  - 현재 노선에 등록되어 있는 역인지 확인하기
+- [x] 노선 업데이트 # updateLine()
   - 같은 이름의 Line이 없을 경우, 예외를 발생시킴
 
 ### StationRepository
