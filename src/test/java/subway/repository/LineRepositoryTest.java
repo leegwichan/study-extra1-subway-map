@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import subway.domain.Line;
 import subway.domain.Station;
 import java.util.List;
@@ -62,5 +64,14 @@ public class LineRepositoryTest {
                 repository.deleteLine(ANOTHER_LINE_NAME));
     }
 
-    
+    @ParameterizedTest(name = "isInRepositoryTest Case : {0}")
+    @CsvSource(value = {"1호선,true", "3호선,false"})
+    void isInRepositoryTest(String lineName, boolean expected) {
+        LineRepository repository = initialLineRepository();
+
+        assertThat(repository.isInRepository(lineName)).isEqualTo(expected);
+    }
+
+
+
 }
