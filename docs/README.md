@@ -44,6 +44,8 @@
   - 제거하려는 Station이 Line에 없는 경우 에러 발생
   - 현재 역이 2개 이하인 경우 에러 발생
 - [x] Stations 조회 기능 # getStations()
+- [x] Line 정보 복제 # copy()
+- [x] 현재 있는 역인지 확인 # isStationInLine()
 
 ### Station
 - [x] 생성시에 지하철 역 이름 형식이 맞는지 확인
