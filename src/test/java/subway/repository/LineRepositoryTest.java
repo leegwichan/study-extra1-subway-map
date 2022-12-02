@@ -90,5 +90,12 @@ public class LineRepositoryTest {
                 repository.getLine(ANOTHER_LINE_NAME));
     }
 
+    @ParameterizedTest(name = "isEnrollStationTest Case : {0}")
+    @CsvSource(value = {"11역,true", "55역,false"})
+    void isEnrollStationTest(String stationName, boolean expected) {
+        LineRepository repository = initialLineRepository();
+        Station station = new Station(stationName);
 
+        assertThat(repository.isEnrollStation(station)).isEqualTo(expected);
+    }
 }
