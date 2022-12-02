@@ -22,7 +22,7 @@ public class StationRepository {
     }
 
     public boolean deleteStation(String name) {
-        if (isInStationRepository(name)) {
+        if (!isInStationRepository(name)) {
             throw new IllegalArgumentException(ExceptionMessage.STATION_OUT_REPOSITORY.getMessage());
         }
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
