@@ -88,3 +88,49 @@
 - [x] 구간 등록 # enrollSection
 - [x] 구간 삭제 # deleteSection
 - [x] 전체 노선 조회 # getLines
+
+
+### OutputView
+- [x] 화면 출력
+  - 메인 화면, 역 관리 화면, 노선 관리 화면, 구간 관리 화면
+- [x] 행동 정상 작동 확인 출력
+  - [INFO] 지하철 역이 등록되었습니다.
+  - [INFO] 지하철 역이 삭제되었습니다.
+  - [INFO] 지하철 노선이 등록되었습니다.
+  - [INFO] 지하철 노선이 삭제되었습니다.
+  - [INFO] 구간이 등록되었습니다.
+  - [INFO] 구간이 삭제되었습니다.
+- [ ] 역 목록 출력
+    ```text
+    [INFO] 교대역 
+    [INFO] 강남역
+    [INFO] 역삼역
+    [INFO] 남부터미널역
+    [INFO] 양재역
+    [INFO] 양재시민의숲역
+    [INFO] 매봉역
+    [INFO] 잠실역
+    ```
+- [ ] 노선 목록 출력
+    ```text
+    ## 노선 목록
+    [INFO] 2호선
+    [INFO] 3호선
+    [INFO] 신분당선
+    [INFO] 1호선
+    ```
+- [ ] 지하철 노선도 출력
+    ```text
+    [INFO] 2호선
+    [INFO] ---
+    [INFO] 교대역
+    [INFO] 강남역
+    [INFO] 역삼역
+    
+    [INFO] 3호선
+    [INFO] ---
+    [INFO] 교대역
+    [INFO] 남부터미널역
+    [INFO] 양재역
+    [INFO] 매봉역
+    ```
