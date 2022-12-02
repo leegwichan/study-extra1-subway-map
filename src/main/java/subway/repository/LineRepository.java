@@ -22,7 +22,7 @@ public class LineRepository {
         lines.add(line);
     }
 
-    public boolean deleteLineByName(String name) {
+    public boolean deleteLine(String name) {
         if (!isInRepository(name)) {
             throw new IllegalArgumentException(ExceptionMessage.LINE_OUT_REPOSITORY.getMessage());
         }

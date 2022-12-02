@@ -38,7 +38,7 @@ public class SubwayMap {
     }
 
     public void deleteLine(String lineName) {
-        lineRepository.deleteLineByName(lineName);
+        lineRepository.deleteLine(lineName);
     }
 
     public Line getLine(String lineName) {
