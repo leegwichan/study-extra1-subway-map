@@ -98,4 +98,17 @@ public class LineRepositoryTest {
 
         assertThat(repository.isEnrollStation(station)).isEqualTo(expected);
     }
+
+    @Test
+    void updateLineTest() {
+        LineRepository repository = initialLineRepository();
+        Line line = repository.getLine(LINE_NAME1);
+        line.addStation(1, new Station("55역"));
+
+        repository.updateLine(line);
+
+        Line updateLine = repository.getLine(LINE_NAME1);
+        assertThat(updateLine.getStations().size()).isEqualTo(3);
+        assertThat(updateLine.getStations().get(1).getName()).isEqualTo("55역");
+    }
 }
