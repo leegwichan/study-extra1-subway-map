@@ -21,24 +21,24 @@ public class OutputView {
 
     public void printStations(List<StationDto> stations) {
         print(STATION_PRINT_TEXT);
-        for (StationDto station : stations) {
-            printStation(station);
-        }
+        printStationsName(stations);
     }
 
     public void printLines(List<LineDto> lines) {
         print(LINE_PRINT_TEXT);
-        for (LineDto lineDto : lines) {
-            printLine(lineDto);
+        printLinesName(lines);
+    }
+
+    private void printStationsName(List<StationDto> stations) {
+        for (StationDto station : stations) {
+            printResult(station.getName());
         }
     }
 
-    private void printStation(StationDto station) {
-        printResult(station.getName());
-    }
-
-    private void printLine(LineDto lineDto) {
-        printResult(lineDto.getName());
+    private void printLinesName(List<LineDto> lines) {
+        for (LineDto lineDto : lines) {
+            printResult(lineDto.getName());
+        }
     }
 
     private void printResult(String string) {
