@@ -89,6 +89,11 @@
 - [x] 구간 삭제 # deleteSection
 - [x] 전체 노선 조회 # getLines
 
+### InputView
+- [ ] 원하는 기능 선택 #readFunction()
+- [ ] 역 이름 입력 #readStationName()
+- [ ] 노선 이름 입력 #readLineName()
+- [ ] 순서 (노선에 역 추가시) 입력 #readOrder()
 
 ### OutputView
 - [x] 화면 출력
@@ -120,7 +125,7 @@
     [INFO] 신분당선
     [INFO] 1호선
     ```
-- [ ] 지하철 노선도 출력
+- [x] 지하철 노선도 출력 # printSubwayMap
     ```text
     [INFO] 2호선
     [INFO] ---
@@ -135,3 +140,6 @@
     [INFO] 양재역
     [INFO] 매봉역
     ```
+
+### SubwayApplication
+- 전반적인 기능 로직 구현
